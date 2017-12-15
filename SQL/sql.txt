@@ -1,0 +1,95 @@
+//DB NAME : pos
+
+create table user(id varchar(250) not null primary key, password varchar(250) not null, email varchar(250) not null, name varchar(250) not null);
+create table item(name varchar(250) primary key not null, price int not null, date timestamp default current_timestamp);
+create table customer(id int primary key auto_increment not null, name varchar(250) not null, phone varchar(250) not null unique);
+create table work(id int not null, item varchar(250) not null , amount int not null default 0);
+create table sales(id int not null, sale int not null, date timestamp default current_timestamp);
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ORDER PAGE
+
+//메뉴판 불러오는 쿼리
+select * from item;
+
+//Order page 메뉴 등록 하는 쿼리(register 버튼 눌렀을때)
+insert into item (name, price) values('$name(item 이름)','$price(item 가격 int형)');
+
+
+
+//Order page 메뉴 지우는 쿼리(delete 버튼 눌렀을때)
+delete from item where name='$name(item 이름)';
+
+
+
+//Order page 고객전화번호로 검색해서 프로필 불러오는 쿼리
+//id, name, phone이 불러와짐
+select * from customer where phone='$phone(유저 전화번호 varchar)';
+
+
+
+//Oder page 주문 넣는 쿼리(고객 $id(int) 를 통해 넣음)
+insert into work (id, item) values($id, '$name(item이름)');
+
+
+
+//Oder page 주문 취소하는 쿼리(고객 $id(int) 를 통해 넣음)
+delete from work where id='$id(고객 id)' AND item='$name(아이템 이름)' limit 1;
+
+
+
+//Order page에 있는 Order list => 현재 고객이 주문한 아이템을 고객 $id를 이용하여 불러옴(customer, work, item 테이블 JOIN);
+select i.name, i.price from (customer c natural join work w) join item i on i.name = w.item where c.id=$id(유저 아이디 int형);
+
+
+
+//Order page의 total 계산 => 결과 값 column 이름 total!
+select sum(i.price) as total from (customer c natural join work w) join item i on i.name = w.item where c.id=$id(유저아이디 int 형);
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+WORK PAGE
+
+
+//Work page에 있는 고객이름이랑 주문정보 불러오는 쿼리
+mysql> select c.name, i.name as item,count(i.name) as amount ,i.price from (customer c natural join work w) join item i on i.name = w.item where c.id=1 group by i.name;
+
+
+
+//Work page에 있는 total price 불러오는 쿼리 => 결과 값 column 이름 total!
+select sum(i.price) as total from (customer c natural join work w) join item i on i.name = w.item where c.id=$id(유저아이디 int 형);
+
+
+나머지 고객정보 불러오는건 ORDER페이지 쿼리 사용하면됨!
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+SALES PAGE
+
+//월 매출 가져오는 쿼리
+select date_format(date, '%d') as year, sale as price from sales where date_format(date, '%Y%m') = "201812";
+
+//년도별 매출 가져오는 쿼리
+select date_format(date, '%Y') as year, sum(sale) as price from sales group by date_format(date, '%Y');
+
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+CUS PAGE
+
+
+//고객정보 불러오는 쿼리(이름으로)
+select * from customer where name='$name';
+
+
+
+//고객 추가하는 쿼리 ($name, $phone(타입 varchar)은 입력받은 데이터)
+insert into customer (name, phone) values('$name', '$phone');
+
+
+
+//고객정보 지우는 쿼리
+delete from customer where id=$id(고객 아이디);
+
+
+//고객정보 바꾸는 쿼리($id는 선택된 고객의 id)
+update customer set phone='$phone' where id=$id;
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

@@ -1,0 +1,116 @@
+body{
+			
+	margin-top : 5%;
+	width : 60%;
+	margin-right : auto;
+	margin-left : auto;
+	
+}
+
+li{
+	text-align : center;
+	margin-left : 3%;
+	margin-right : 7%;
+	border-left: 2px solid white;
+}
+
+nav{
+	border-radius: 20px;	
+}
+
+.nav-list{
+	font-size : 20px;
+	font-weight : bold;
+	border-color : black;
+}
+
+#customer-list {
+	width : 95%;
+	height : 600px;
+	margin-top : 10px;
+	border: 2px solid blue;
+	border-radius: 20px;
+	margin-right : auto;
+	margin-left : auto;
+	overflow-y: auto;
+}
+#customer{
+	
+	width : 95%;
+	height : 50px;
+	float : top;
+	border: 2px solid blue;
+	margin-top : 10px;
+	margin-right : auto;
+	margin-left : auto;
+	padding-left : 8px;
+	padding-top : 5px;
+	
+	border-radius : 8px;
+}
+
+#name{
+	border-radius : 4px;
+}
+
+#name {
+	float: top;
+	width: 80%;
+	height : 30px;
+	border: 1px solid black;
+}
+
+
+
+
+#customer-info{
+	
+	height : 100px;
+	margin-top : 10px;
+	border: 2px solid blue;
+	border-radius: 20px;
+	margin-right : auto;
+	margin-left : auto;
+	overflow: hidden;
+
+}
+table {
+	width: 78.5%;
+	border: 2px solid black; 
+	caption-side: bottom; 
+	padding: 8px;
+	margin-top: 8px;
+	margin-left: 8px;
+	margin-right: auto;
+	/* overflow: auto; */
+}
+tr { 
+	font-style: italic; 
+	text-align: center;
+}
+td {
+	 text-align: center; width: 30%; 
+}
+
+#custom {
+	
+	float: right;
+	margin-right: 5px;
+	padding: 8px;
+	
+}
+
+#delete{
+	margin-right: 20px;
+	margin-left: 2px;
+	
+}
+
+#text-group{
+	margin-left : 25px;
+}
+
+
+
+
+

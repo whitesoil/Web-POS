@@ -1,0 +1,26 @@
+
+body {
+	background: #f2f2f2;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor {
+	width: 900px;
+	height: 400px;
+	background: white;
+	overflow: auto;
+	border-radius: 4px;
+	margin-left: 50px;
+	margin-top: 70px;
+}
+
+/* Scroll */
+
+.contenedor::-webkit-scrollbar {
+	width: 7px;
+}
+
+.contenedor::-webkit-scrollbar-thumb {
+	background: #ff9d00;
+	border-radius: 5px;
+}

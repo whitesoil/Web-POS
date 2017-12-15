@@ -1,0 +1,56 @@
+.dialog{
+	position : absolute;
+	top : 30%;
+	left : 40%;
+	width: 400px;
+	height : 250px;
+	border : 2px solid blue;
+	border-radius : 6px;
+	background : #e2ff82;
+}
+
+.dialog-name{	
+	margin-top : 80px;
+	margin-bottom : 20px;
+	margin-right : 70px;
+	width : 200px;
+	height :20px;
+}
+
+.dialog-price{
+	width : 200px;
+	height :20px;
+	margin-right : 75px
+}
+
+
+#text-group{
+	width: 400px;
+	height : 200px;
+	/* border : 2px solid red; */
+	text-align : right;
+}
+
+#text-group label{
+	font-size : 20px;
+}
+
+
+#dialog-phone{	
+	width : 200px;
+	height :20px;
+	margin-right : 75px
+}
+
+
+#btn-group{
+	vertical-align :bottom;
+}
+
+#btn-group button{
+	width : 40%;
+	height : 35px;
+	margin-left : 6%;
+	margin-top : 8px;
+	border-radius :8px;
+}

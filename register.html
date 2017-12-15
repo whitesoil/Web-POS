@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="./css/register.css?var=1">
+	  <link rel="shortcut icon" type="image/jpg" href="./src/img/pig.jpg"/>
+    <title>Show me the money</title>
+  </head>
+	
+  <body>
+	   <div id = "centers">
+			<h1 >
+				Show me the money!
+			</h1>
+			<img class="img-fluid" id = "smtm" src="./src/img/pig.jpg" alt="Chania" >
+
+    		<h2 style = "text-align : center;">
+    			Make your sales more efficiently
+    		</h2>
+
+    	<hr />
+    	<form class="form-horizontal" action="./register.php" method="post">
+		  <div class="form-group">
+			<div class=" col-sm-offset-3 col-sm-5">
+				<label for ="id">ID</label>
+			  <input type="text" class="form-control" name="id" placeholder="ID">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<div class=" col-sm-offset-3 col-sm-5">
+				<label for ="pswd">Password</label>
+			  <input type="password" class="form-control" name="password" placeholder="Password">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<div class=" col-sm-offset-3 col-sm-5">
+				<label for ="email">E-mail</label>
+			  <input type="email" class="form-control" name="email" placeholder="Email">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<div class=" col-sm-offset-3 col-sm-5">
+				<label for ="name">Name</label>
+			  <input type="text" class="form-control" name="name" placeholder="Name">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<div class="col-sm-offset-3 col-sm-2">
+			  <button type="submit" class="btn btn-success btn-sm btn-block">Register</button>
+			</div>
+			<div class="col-sm-offset-1 col-sm-2">
+			  <button type="button" class="btn btn-danger btn-sm btn-block" onclick="location.href='./login.html'">Cancel</button>
+			</div>
+		  </div>
+    	</form>
+	</div>
+  </body>
+</html>

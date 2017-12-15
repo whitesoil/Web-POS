@@ -1,0 +1,22 @@
+#centers{
+	margin-top : 5%;
+	text-align: center;	
+	width : 50%;	
+	height : 250px;
+	margin-left : auto;	
+	margin-right : auto;
+}		
+
+#smtm{
+	width : 60%;
+	
+}
+
+form{
+	margin-left : 10%;
+}
+
+h1{
+	font-size : 60px; 
+	color : #FF0033;
+}

@@ -1,0 +1,35 @@
+body{
+			
+	margin-top : 5%;
+	width : 60%;
+	margin-right : auto;
+	margin-left : auto;
+	
+}
+
+li{
+	text-align : center;
+	margin-left : 3%;
+	margin-right : 7%;
+	border-left: 2px solid white;
+}
+
+nav{
+	border-radius: 20px;	
+}
+
+.nav-list{
+	font-size : 20px;
+	font-weight : bold;
+	border-color : black;
+}
+
+.lists{
+	width : 31%;
+	height : 800px;
+	border: 2px solid blue;
+	float : right;
+	margin-right : 2%;
+	margin-top : 10px;
+	border-radius: 20px;	
+}

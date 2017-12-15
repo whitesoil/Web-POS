@@ -1,0 +1,28 @@
+#centers{
+	margin-top : 10%;
+	text-align: center;
+	width : 50%;
+	height : 250px;
+	margin-left : auto;
+	margin-right : auto;
+}		
+
+#id{
+
+	margin-right : 10px;
+	
+}
+
+#smtm{
+
+	width : 60%;
+	
+}
+
+label{
+	font-size : 20px;
+}
+
+button{
+	width :100px;
+}
